@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finance AI
 
-## Getting Started
+![Capa do projeto](./public/capa.png)
 
-First, run the development server:
+A Finance AI é uma plataforma de gestão financeira desenvolvida para ajudar usuários a monitorarem suas movimentações financeiras, organizarem seu orçamento e receberem insights inteligentes com apoio de IA.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O projeto foi desenvolvido como parte do curso prático da FullStackClub, utilizando uma stack moderna com Next.js, Prisma, PostgreSQL e TailwindCSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Cadastro e autenticação de usuários
+- Dashboard financeiro
+- Adição, edição e remoção de transações
+- Controle de receitas, despesas e investimentos
+- Relatórios por categoria
+- Filtros por data e tipo de transação
+- Interface moderna e responsiva
+- Insights financeiros gerados com IA
+- Persistência de dados em banco PostgreSQL
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🖼️ Preview
 
-## Learn More
+A plataforma possui:
 
-To learn more about Next.js, take a look at the following resources:
+- Dashboard com saldo atual, receitas, despesas e investimentos
+- Lista de transações recentes
+- Modal para adicionar novas transações
+- Tela para edição de movimentações
+- Relatórios e gráficos de gastos por categoria
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Tecnologias Utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Front-end
 
-## Deploy on Vercel
+- Next.js 14
+- React 18
+- TypeScript
+- TailwindCSS
+- tailwindcss-animate
+- Lucide React
+- Radix UI Slot
+- clsx
+- class-variance-authority
+- tailwind-merge
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Back-end e Banco de Dados
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Prisma ORM
+- PostgreSQL
+- NeonDB
+- Clerk Authentication
+
+### Ferramentas de Desenvolvimento
+
+- ESLint
+- Prettier
+- prettier-plugin-tailwindcss
+- Husky
+- lint-staged
+- git-commit-msg-linter
