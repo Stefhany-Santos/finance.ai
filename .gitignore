@@ -39,3 +39,6 @@ next-env.d.ts
 
 .idea/
 .idea
+
+#docker
+.postgres-data
