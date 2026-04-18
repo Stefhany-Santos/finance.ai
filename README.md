@@ -4,7 +4,7 @@
 
 A Finance AI é uma plataforma de gestão financeira desenvolvida para ajudar usuários a monitorarem suas movimentações financeiras, organizarem seu orçamento e receberem insights inteligentes com apoio de IA.
 
-O projeto foi desenvolvido como parte do curso prático da FullStackClub, utilizando uma stack moderna com Next.js, Prisma, PostgreSQL e TailwindCSS.
+O projeto foi desenvolvido como parte do curso prático da FullStack Club, utilizando uma stack moderna com Next.js, Prisma, PostgreSQL e TailwindCSS.
 
 ## ✨ Funcionalidades
 
