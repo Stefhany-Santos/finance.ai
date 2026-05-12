@@ -1,10 +1,12 @@
+version: "3"
+
 services:
   postgres:
-    image: postgres:16
+    image: postgres:latest
     container_name: finance-ai-database
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: finance-ai
     ports:
       - "5432:5432"
