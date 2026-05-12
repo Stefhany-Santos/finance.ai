@@ -11,9 +11,11 @@ import LastTransactions from "./_components/last-transactions";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 import AiReportButton from "./_components/ai-report-button";
 
+export const dynamic = "force-dynamic";
+
 interface HomeProps {
   searchParams: {
-    month: string;
+    month?: string;
   };
 }
 
@@ -24,7 +26,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   }
   const monthIsInvalid = !month || !isMatch(month, "MM");
   if (monthIsInvalid) {
-    redirect(`?month=${new Date().getMonth() + 1}`);
+    redirect(`?month=${String(new Date().getMonth() + 1).padStart(2, "0")}`);
   }
   const dashboard = await getDashboard(month);
   const userCanAddTransaction = await canUserAddTransaction();

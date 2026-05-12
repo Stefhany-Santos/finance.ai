@@ -23,6 +23,8 @@ import MonthSelect from "./_components/month-select";
 import AiReportButton from "../(home)/_components/ai-report-button";
 import { TransactionType } from "@prisma/client";
 
+export const dynamic = "force-dynamic";
+
 type DashboardTransaction = {
   id: string;
   name: string;
@@ -197,32 +199,34 @@ const DashboardPage = async ({
               )}
               {dashboard.lastTransactions.map(
                 (tx: DashboardTransaction, i: number) => {
-                const isExpense = tx.type === TransactionType.EXPENSE;
-                return (
-                  <div key={i} className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-lg bg-white/5 p-3">
-                        <Wallet className="h-5 w-5 text-muted-foreground" />
+                  const isExpense = tx.type === TransactionType.EXPENSE;
+
+                  return (
+                    <div key={i} className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="rounded-lg bg-white/5 p-3">
+                          <Wallet className="h-5 w-5 text-muted-foreground" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold">{tx.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {new Date(tx.date).toLocaleDateString("pt-BR", {
+                              day: "2-digit",
+                              month: "short",
+                              year: "numeric",
+                            })}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-sm font-bold">{tx.name}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {new Date(tx.date).toLocaleDateString("pt-BR", {
-                            day: "2-digit",
-                            month: "short",
-                            year: "numeric",
-                          })}
-                        </p>
-                      </div>
+                      <p
+                        className={`text-sm font-bold ${isExpense ? "text-danger" : "text-primary"}`}
+                      >
+                        {isExpense ? "-" : "+"}
+                        {formatCurrency(Number(tx.amount))}
+                      </p>
                     </div>
-                    <p
-                      className={`text-sm font-bold ${isExpense ? "text-danger" : "text-primary"}`}
-                    >
-                      {isExpense ? "-" : "+"}
-                      {formatCurrency(Number(tx.amount))}
-                    </p>
-                  </div>
-                );
+                  );
+                },
               )}
             </CardContent>
           </Card>
