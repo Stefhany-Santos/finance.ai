@@ -46,6 +46,9 @@ const TransactionsPieChart = ({
 }: TransactionsPieChartProps) => {
   const totalAmount = depositsTotal + expensesTotal + investmentsTotal;
   const isEmpty = totalAmount === 0;
+  const emptyLabel = showEmptyAsZero
+    ? "Sem movimentacao neste mes"
+    : "Sem movimentacao";
   const chartData = [
     {
       type: TransactionType.DEPOSIT,
@@ -70,11 +73,11 @@ const TransactionsPieChart = ({
     },
   ];
   const displayData = isEmpty
-    ? [{ type: "Sem movimentacao", amount: 1, fill: "hsl(var(--muted))" }]
+    ? [{ type: emptyLabel, amount: 1, fill: "hsl(var(--muted))" }]
     : chartData;
   const tooltipContent = isEmpty ? (
     <div className="grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl">
-      <div className="font-medium">Sem movimentacão</div>
+      <div className="font-medium">{emptyLabel}</div>
       <div className="flex items-center justify-between gap-2">
         <span className="text-muted-foreground">Total</span>
         <span className="font-mono font-medium tabular-nums text-foreground">

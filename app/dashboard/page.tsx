@@ -21,6 +21,15 @@ import {
 import { getDashboard } from "../_data/get-dashboard";
 import MonthSelect from "./_components/month-select";
 import AiReportButton from "../(home)/_components/ai-report-button";
+import { TransactionType } from "@prisma/client";
+
+type DashboardTransaction = {
+  id: string;
+  name: string;
+  date: string | Date;
+  amount: number;
+  type: TransactionType;
+};
 
 const DashboardPage = async ({
   searchParams,
@@ -186,8 +195,8 @@ const DashboardPage = async ({
                   Nenhuma transação.
                 </p>
               )}
-              {dashboard.lastTransactions.map((tx: any, i: number) => {
-                const isExpense = tx.type === "EXPENSE";
+              {dashboard.lastTransactions.map((tx: DashboardTransaction, i) => {
+                const isExpense = tx.type === TransactionType.EXPENSE;
                 return (
                   <div key={i} className="flex items-center justify-between">
                     <div className="flex items-center gap-4">

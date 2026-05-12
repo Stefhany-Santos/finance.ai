@@ -22,7 +22,6 @@ import {
 } from "@/app/_components/ui/chart";
 import { TRANSACTION_CATEGORY_LABELS } from "@/app/_constants/transactions";
 import { TotalExpensePerCategory } from "@/app/_data/get-dashboard/types";
-import { TransactionCategory } from "@prisma/client";
 
 interface ExpensesBarChartProps {
   data: TotalExpensePerCategory[];
