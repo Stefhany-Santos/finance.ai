@@ -195,7 +195,8 @@ const DashboardPage = async ({
                   Nenhuma transação.
                 </p>
               )}
-              {dashboard.lastTransactions.map((tx: DashboardTransaction, i) => {
+              {dashboard.lastTransactions.map(
+                (tx: DashboardTransaction, i: number) => {
                 const isExpense = tx.type === TransactionType.EXPENSE;
                 return (
                   <div key={i} className="flex items-center justify-between">
@@ -222,7 +223,7 @@ const DashboardPage = async ({
                     </p>
                   </div>
                 );
-              })}
+              )}
             </CardContent>
           </Card>
         </div>
